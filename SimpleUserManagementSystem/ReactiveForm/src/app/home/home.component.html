@@ -1,0 +1,201 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- Main Toolbar of an App -->    
+<mat-toolbar color="accent">    
+    <span>Sample User Management System</span>    
+    <span class="demo-toolbar"></span>     
+  </mat-toolbar>    
+    
+  <mat-card>    
+    <!-- Title of an Card -->    
+    <mat-card-title>    
+        Sample user Mangement System
+    </mat-card-title>    
+    <mat-card-content>    
+        <form [formGroup]="regiForm">    
+            <table>    
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width">    
+                            <input formControlName="fullname" matInput placeholder="Full Name">    
+                        </mat-form-field>  
+                        <mat-error>  
+                            <!-- <span *ngIf="!regiForm.get('fullname').valid && regiForm.get('fullname').touched">Please enter First Name !!!</span>   -->
+                            <div *ngIf="regiForm.get('fullname').touched" class="alert alert-danger">
+                              <div *ngIf="regiForm.hasError('required',['fullname'])">
+                                This field is required
+                              </div>
+                              <div *ngIf="regiForm.hasError('minlength',['fullname'])">
+                                please enter atleast 3 characters
+                              </div>
+                              <div *ngIf="regiForm.hasError('maxlength',['fullname'])">
+                                  please enter no more than 10 characters
+                              </div>
+                              <div *ngIf="regiForm.hasError('pattern',['fullname'])">
+                                  full name accepts only alphabets....
+                                </div>
+                            </div>
+                          </mat-error>  
+                    </td>        
+                </tr>  
+                <tr>    
+                  <td colspan="2">    
+                      <mat-form-field class="demo-full-width">    
+                          <input  formControlName="Website" matInput placeholder="Website">    
+                      </mat-form-field>
+                      <mat-error>
+                        <div *ngIf="regiForm.get('Website').touched" class="alert alert-danger">
+                          <div *ngIf="regiForm.hasError('required',['Website'])">
+                                This field is required
+                          </div>
+                          <div *ngIf="regiForm.hasError('pattern',['Website'])">
+                            please enter a valid Url
+                          </div>
+                        </div>
+                      </mat-error>    
+                  </td>        
+              </tr>   
+              <tr>    
+                <td colspan="2">    
+                    <mat-form-field class="demo-full-width" >    
+                        <input matInput placeholder="Email"formControlName="Email">    
+                    </mat-form-field>  
+                    <mat-error>
+                        <div *ngIf="regiForm.get('Email').touched" class="alert alert-danger">
+                          <div *ngIf="regiForm.hasError('required',['Email'])">
+                                This field is required
+                          </div>
+                          <div *ngIf="regiForm.hasError('pattern',['Email'])">
+                            please enter a valid Email Id....
+                          </div>
+                        </div>
+                    </mat-error>    
+                </td>    
+              </tr> 
+              <tr>    
+                <td colspan="2">    
+                    <mat-form-field class="demo-full-width">    
+                        <input matInput placeholder="MobileNumber" formControlName="MobileNumber">    
+                    </mat-form-field>  
+                    <mat-error>
+                        <div *ngIf="regiForm.get('MobileNumber').touched" class="alert alert-danger">
+                          <div *ngIf="regiForm.hasError('required',['MobileNumber'])">
+                                This field is required
+                          </div>
+                          <div *ngIf="regiForm.hasError('minlength',['MobileNumber'])">
+                               MobileNumber should be 10digits..
+                          </div>
+                          <div *ngIf="regiForm.hasError('maxlength',['MobileNumber'])">
+                              MobileNumber should be  not more than 10digits..
+                          </div>
+                          <div *ngIf="regiForm.hasError('pattern',['MobileNumber'])">
+                              Mobile numberr should be only numbers.....
+                          </div> 
+                        </div>
+                    </mat-error>  
+                </td>    
+              </tr> 
+              <tr>
+                  <td colspan="2"><br>    
+                    <mat-form-field class="demo-full-width">    
+                        <mat-select class="demo-full-width" placeholder="Select Blog" [(value)]="selected" formControlName="Technologies">    
+                            <mat-option>-- Select Any --</mat-option>    
+                            <mat-option value="Blog1">Blog1</mat-option>    
+                            <mat-option value="Blog2">Blog2</mat-option>    
+                            <mat-option value="Blog3">Blog3</mat-option>
+                            <mat-option value="Blog4">Blog4</mat-option>    
+                            <mat-option value="Blog5">Blog5</mat-option>    
+                            <mat-option value="Blog6">Blog6</mat-option>     
+                        </mat-select>    
+                    </mat-form-field>  
+                    <mat-error>
+                        <div *ngIf="regiForm.get('Technologies').touched" class="alert alert-danger">
+                          <div *ngIf="regiForm.hasError('required',['Technologies'])">
+                                This field is required
+                          </div>
+                        </div>
+                    </mat-error>   
+                </td>    
+              </tr>
+              <tr>    
+               <td colspan="2">    
+                        <mat-form-field class="demo-full-width">    
+                            <textarea matInput placeholder="Address" formControlName="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>    
+                        </mat-form-field>
+                        <mat-error>
+                            <div *ngIf="regiForm.get('Address').touched" class="alert alert-danger">
+                              <div *ngIf="regiForm.hasError('required',['Address'])">
+                                    This field is required
+                              </div>
+                              <div *ngIf="regiForm.hasError('minlength',['Address'])">
+                                  Address should be 25 characters
+                             </div>
+                             <div *ngIf="regiForm.hasError('maxlength',['Address'])">
+                                Address should be  not more than 150 characters..
+                             </div>
+                            </div>
+                        </mat-error>     
+                    </td>    
+                </tr>       
+                <tr>    
+                    <td colspan="2">  
+                        <mat-form-field>
+                            <input matInput type="datetime-local" placeholder="start date" formControlName="DateandTime" >
+                          </mat-form-field> 
+                          <mat-error>
+                              <div *ngIf="regiForm.get('DateandTime').touched" class="alert alert-danger">
+                                <div *ngIf="regiForm.hasError('required',['DateandTime'])">
+                                      This field is required
+                                </div>
+                              </div>
+                          </mat-error>      
+    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2" class="content-center">
+                        <button  mat-raised-button color="accent" *ngIf="save" [disabled]="regiForm.invalid" class="btn btn-primary btn-block" (click)="saveUser(userid)">Save</button>    
+                        <button mat-raised-button color="accent" [disabled]="regiForm.invalid" *ngIf="!save"  (click)="addUser()">AddUser</button>       
+                    </td>    
+                </tr>    
+            </table>    
+        </form>   
+    </mat-card-content>
+  </mat-card>  
+  <div class="container">
+    <table class="table table-bordered"  class="content-center tabledata" *ngIf="!users.length == 0">
+        <thead class="header1">
+            <tr class="row1">
+                <th class="cell1">User ID</th>
+                <th class="cell1">Name</th>
+                <th class="cell1">Website</th>
+                <th class="cell1">Email</th>
+                <th class="cell1">MobileNumber</th>
+                <th class="cell1">Technologies</th>
+                <th class="cell1">Address</th>
+                <th class="cell1">DateandTime</th>
+                <th class="cell1">Action1</th>
+                <th class="cell1">Action2</th>
+            </tr>            
+        </thead>
+        <tbody class ="header2">
+            <tr class="row2" *ngFor="let user of users">
+                <td class="cell2">{{user.uid }}</td>
+                <td class="cell2">{{user.fullname }}</td>
+                <td class="cell2">{{user.Website }}</td>
+                <td class="cell2">{{user.Email}}</td>
+                <td class="cell2">{{user.MobileNumber}}</td>
+                <td class="cell2">{{user.Technologies}}
+                <td class="cell2">{{user.Address}}</td>
+                <td class="cell2">{{user.DateandTime}}</td>
+                <td class="cell2">
+                    <button type="button"  mat-raised-button color="accent" class="btn btn-success btn-sm" (click)="editUser(user.uid)">Edit</button>
+                </td>
+                <td class="cell2">
+                    <button type="button"  mat-raised-button color="accent" class="btn btn-danger btn-sm" (click)="deleteUser(user.uid)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>  
+  </div>
+    
+   

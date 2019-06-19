@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+    
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';    
+.mat-card {    
+    text-align: -webkit-center;    
+}    
+    
+.demo-toolbar {    
+    display: flex;    
+    align-items: center;    
+    width: 100%;    
+}    
+    
+.demo-form {    
+    min-width: 150px;    
+    max-width: 500px;    
+    width: 100%;    
+}    
+    
+.demo-full-width {    
+    width: 100%;    
+}    
+    
+body {    
+    margin: 0;    
+    font-family: Roboto, sans-serif;    
+}    
+    
+mat-card {    
+    max-width: 80%;    
+    margin: 2em auto;    
+    text-align: center;    
+}    
+    
+mat-toolbar-row {    
+    justify-content: space-between;    
+}    
+    
+.done {    
+    position: fixed;    
+    bottom: 20px;    
+    right: 20px;    
+    color: white;    
+}    
+    
+.content-center {    
+    text-align: -webkit-center;    
+}   
+
+.table tr td .btn{
+    margin-right: 10px;
+}
+.table tr td .btn:last-child{
+    margin-right: 0;
+}
+.container{
+    border:1px solid palegreen;
+    border-radius: 1em;
+}
+.tabledata {
+    background-color:rgb(85, 78, 85);
+}
+
+.tabledata {
+    border-collapse: collapse;
+    border-radius:0.9em;
+  }
+  
+  .tabledata ,.header1,.row1,.cell1{
+    border: 1px solid palegreen;
+    border-radius:0.9em;
+    font-size: 20px;
+    font-weight: bold;
+    color:  rgb(77, 20, 131);
+  }
+  .cell1 ,.cell2{
+      text-align: center
+  }
+  .tabledata ,.header1{
+      background-color: azure;  
+  }
+
+  .tabledata ,.header2,.row2,.cell2{
+    border: 1px solid palegreen;
+    border-radius:0.9em;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(77, 20, 131);
+  }
